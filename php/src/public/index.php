@@ -25,7 +25,7 @@ $container['db'] = function ($c) {
     $db = new NotORM($pdo); return $db;
 };
 
-$usuarios = $container['db']->usuarios();
+$usuarios = $container['db']->usuario();
 $usersAuth = array();
 
 foreach ($usuarios as $usuario) {
@@ -45,7 +45,7 @@ $app->put('/api/entregas/{id}', function (Request $request, Response $response) 
     $id = $request->getAttribute('id');
     $json = $request->getParsedBody();
 
-    $entrega = $this->db->entregas()->where('id', $id);
+    $entrega = $this->db->entrega()->where('id', $id);
     if($entrega->fetch()){
         $result =  $entrega->update($json);
         echo json_encode(array(
@@ -62,7 +62,7 @@ $app->put('/api/entregas/{id}', function (Request $request, Response $response) 
 
 $app->delete('/api/entregas/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
-    $entrega = $this->db->entregas()->where('id',$id);
+    $entrega = $this->db->entrega()->where('id',$id);
     if($entrega->fetch()){
         $result =  $entrega->delete();
         echo json_encode(array(

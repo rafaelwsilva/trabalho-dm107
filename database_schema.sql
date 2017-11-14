@@ -1,17 +1,17 @@
 CREATE DATABASE IF NOT EXISTS trabalhoDM107;
 USE trabalhoDM107;
 
-CREATE TABLE IF NOT EXISTS usuarios (
+CREATE TABLE IF NOT EXISTS usuario (
   id int NOT NULL auto_increment,
   username varchar(50),
   password varchar(50),
   PRIMARY KEY (id)
 );
 
-INSERT INTO usuarios (id, username, password) VALUES
+INSERT INTO usuario (id, username, password) VALUES
 (1, 'admin', 'admin');
 
-CREATE TABLE IF NOT EXISTS entregas (
+CREATE TABLE IF NOT EXISTS entrega (
   id int NOT NULL auto_increment,
   numero_pedido int NOT NULL,
   id_cliente int NOT NULL,
