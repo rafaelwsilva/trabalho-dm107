@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS entrega (
   id_cliente int NOT NULL,
   nome_recebedor varchar(250),
   cpf_recebedor varchar(14),
-  data_hora_entrega datetime,
+  data_hora_entrega timestamp,
   PRIMARY KEY (id)
 );
 
