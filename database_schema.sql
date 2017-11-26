@@ -9,7 +9,9 @@ CREATE TABLE IF NOT EXISTS usuario (
 );
 
 INSERT INTO usuario (id, username, password) VALUES
-(1, 'admin', 'admin');
+(1, 'admin', 'admin'),
+(2 ,'daniela', 'daniela'),
+(3, 'rafael','rafael');
 
 CREATE TABLE IF NOT EXISTS entrega (
   id int NOT NULL auto_increment,
